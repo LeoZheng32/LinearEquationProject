@@ -1,9 +1,14 @@
 public class LinearEquation {
-    private final int x1; private final int y1;
-    private final int x2; private final int y2;
+    private final int x1;
+    private final int y1;
+    private final int x2;
+    private final int y2;
 
     public LinearEquation(int x1, int y1, int x2, int y2) {
-        this.x1 = x1; this.y1 = y1; this.x2 = x2; this.y2 = y2;
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
     }
 
     public double distance() {
@@ -30,19 +35,38 @@ public class LinearEquation {
         String slope = "";
         if ((double) (y2 - y1) / (x2 - x1) % 1 == 0) {
             slope += (double) (y2 - y1) / (x2 - x1);
-        } else {
-            /*
-            if ((y2 - y1) / 2 == 0 && (x2 - x1) / 2 == 0) {
-                int maxTimes = (x2 - x1) / 2;
-                if y2 - y1 / 2(maxTimes)
-            }
-            */
-            slope += (y2 - y1) + "/" + (x2 - x1);
-        }
-        if (x1 == x2) {
+            return "y = " + slope + "x + " + yIntercept();
+        } else if (x1 == x2){
             return "x = " + x1;
+        } else {
+            int x = x2 - x1;
+            int y = y2 - y1;
+            if (x / 2 != 0 && y / 2 != 0 && x % 2 == 0 && y % 2 == 0) {
+                while (x / 2 != 0 && y / 2 != 0 && x % 2 == 0 && y % 2 == 0) {
+                    x /= 2;
+                    y /= 2;
+                }
+            }
+            if (x / 3 != 0 && y / 3 != 0 && x % 3 == 0 && y % 3 == 0) {
+                while (x / 3 != 0 && y / 3 != 0 && x % 3 == 0 && y % 3 == 0) {
+                    x /= 3;
+                    y /= 3;
+                }
+            }
+            if (x / 5 != 0 && y / 5 != 0 && x % 5 == 0 && y % 5 == 0) {
+                while (x / 5 != 0 && y / 5 != 0 && x % 5 == 0 && y % 5 == 0) {
+                    x /= 5;
+                    y /= 5;
+                }
+            }
+            if (x / 7 != 0 && y / 7 != 0 && x % 7 == 0 && y % 7 == 0) {
+                while (x / 7 != 0 && y / 7 != 0 && x % 7 == 0 && y % 7 == 0) {
+                    x /= 7;
+                    y /= 7;
+                }
+            }
+            return "y = " + y + "/" + x + "x + " + yIntercept();
         }
-        return "y = " + slope + "x + " + yIntercept();
     }
 
     public String coordinateForX(double x) {
@@ -78,6 +102,6 @@ public class LinearEquation {
     }
 
     private double roundedToHundredth(double toRound) {
-        return Math.round(toRound * 100) /100.0;
+        return Math.round(toRound * 100) / 100.0;
     }
 }
