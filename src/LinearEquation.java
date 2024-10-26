@@ -33,9 +33,19 @@ public class LinearEquation {
 
     public String equation() {
         String slope = "";
+        String interceptVal;
+
+        if ((double) yIntercept() < 0) {
+            interceptVal = "- " + Math.abs((double) yIntercept());
+        } else {
+            interceptVal = "+ " + yIntercept();
+        }
+
+
+
         if ((double) (y2 - y1) / (x2 - x1) % 1 == 0) {
             slope += (double) (y2 - y1) / (x2 - x1);
-            return "y = " + slope + "x + " + yIntercept();
+            return "y = " + slope + "x " + interceptVal;
         } else if (x1 == x2){
             return "x = " + x1;
         } else {
@@ -65,7 +75,7 @@ public class LinearEquation {
                     y /= 7;
                 }
             }
-            return "y = " + y + "/" + x + "x + " + yIntercept();
+            return "y = " + y + "/" + x + "x " + interceptVal;
         }
     }
 
