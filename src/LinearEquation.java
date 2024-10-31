@@ -35,10 +35,10 @@ public class LinearEquation {
         String slope = "";
         String interceptVal = "";
 
-        if ((double) yIntercept() < 0) {
+        if (yIntercept() != null && (double) yIntercept() < 0) {
             interceptVal = "- " + Math.abs((double) yIntercept());
         } else {
-            if ((double) yIntercept() != 0) {
+            if (yIntercept() != null && (double) yIntercept() != 0) {
                 interceptVal += "+ " + yIntercept();
             }
         }
