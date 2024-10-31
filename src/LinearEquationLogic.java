@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class LinearEquationLogic {
-    private String coord1;
-    private String coord2;
+    private String cord1;
+    private String cord2;
     private int x1;
     private int y1;
     private int x2;
@@ -10,8 +10,8 @@ public class LinearEquationLogic {
     private final Scanner scan;
 
     public LinearEquationLogic() {
-        coord1 = null;
-        coord2 = null;
+        cord1 = null;
+        cord2 = null;
         scan = new Scanner(System.in);
     }
 
@@ -24,16 +24,16 @@ public class LinearEquationLogic {
     private void getData() {
         System.out.println("Hello there please give me 2 coordinates");
         System.out.print("Coordinate 1: ");
-        coord1 = scan.nextLine();
+        cord1 = scan.nextLine();
         System.out.print("Coordinate 2: ");
-        coord2 = scan.nextLine();
+        cord2 = scan.nextLine();
     }
 
     private void getXAndYValue() {
-        x1 = Integer.parseInt(coord1.substring(1, coord1.indexOf(",")));
-        y1 = Integer.parseInt(coord1.substring(coord1.indexOf(",") + 2, coord1.indexOf(")")));
-        x2 = Integer.parseInt(coord2.substring(1, coord2.indexOf(",")));
-        y2 = Integer.parseInt(coord2.substring(coord2.indexOf(",") + 2, coord2.indexOf(")")));
+        x1 = Integer.parseInt(cord1.substring(1, cord1.indexOf(",")));
+        y1 = Integer.parseInt(cord1.substring(cord1.indexOf(",") + 2, cord1.indexOf(")")));
+        x2 = Integer.parseInt(cord2.substring(1, cord2.indexOf(",")));
+        y2 = Integer.parseInt(cord2.substring(cord2.indexOf(",") + 2, cord2.indexOf(")")));
     }
 
     private void print() {
