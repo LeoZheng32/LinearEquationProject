@@ -56,10 +56,7 @@ public class LinearEquationLogic {
             System.out.print("Would you like to enter another pair of coordinates? y/n: ");
             String answer = scan.nextLine();
             if (answer.equals("y")) {
-                System.out.print("Enter a value for x: ");
-                findYForX = scan.nextDouble();
-                scan.nextLine();
-                System.out.println("Coordinate for x: " + equation.coordinateForX(findYForX));
+                start();
             } else {
                 inputAnotherX = false;
             }
