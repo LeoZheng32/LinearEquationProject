@@ -33,15 +33,15 @@ public class LinearEquation {
 
     public String equation() {
         String slope = "";
-        String interceptVal;
+        String interceptVal = "";
 
         if ((double) yIntercept() < 0) {
             interceptVal = "- " + Math.abs((double) yIntercept());
         } else {
-            interceptVal = "+ " + yIntercept();
+            if ((double) yIntercept() != 0) {
+                interceptVal += "+ " + yIntercept();
+            }
         }
-
-
 
         if ((double) (y2 - y1) / (x2 - x1) % 1 == 0) {
             slope += (double) (y2 - y1) / (x2 - x1);
