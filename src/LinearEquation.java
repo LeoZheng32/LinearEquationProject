@@ -34,12 +34,12 @@ public class LinearEquation {
     public String equation() {
         String slope = "";
         String interceptVal = "";
-
+        double yInter = roundedToHundredth(Math.abs((double) yIntercept()));
         if (yIntercept() != null && (double) yIntercept() < 0) {
-            interceptVal = "- " + Math.abs((double) yIntercept());
+            interceptVal = "- " + yInter;
         } else {
             if (yIntercept() != null && (double) yIntercept() != 0) {
-                interceptVal += "+ " + yIntercept();
+                interceptVal += "+ " + yInter;
             }
         }
         if ((double) (y2 - y1) / (x2 - x1) % 1 == 0) {
