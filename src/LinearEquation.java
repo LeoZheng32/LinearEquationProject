@@ -42,62 +42,27 @@ public class LinearEquation {
                 interceptVal += "+ " + yIntercept();
             }
         }
-
         if ((double) (y2 - y1) / (x2 - x1) % 1 == 0) {
-            slope += (double) (y2 - y1) / (x2 - x1);
+            if ((double) (y2 - y1) / (x2 - x1) == 1) {
+                slope += "";
+            } else if ((double) (y2 - y1) / (x2 - x1) == -1) {
+                slope += "-";
+            } else if ((double) slope() == 0) {
+                return "y = " + yIntercept();
+                } else {
+                slope += (double) (y2 - y1) / (x2 - x1);
+            }
             return "y = " + slope + "x " + interceptVal;
-        } else if (x1 == x2){
+        } else if (x1 == x2) {
             return "x = " + x1;
         } else {
             int x = x2 - x1;
             int y = y2 - y1;
-            if (x / 2 != 0 && y / 2 != 0 && x % 2 == 0 && y % 2 == 0) {
-                while (x / 2 != 0 && y / 2 != 0 && x % 2 == 0 && y % 2 == 0) {
-                    x /= 2;
-                    y /= 2;
-                }
+            if ((double) x / y < 0) {
+                return "y = -" + Math.abs(y) + "/" + Math.abs(x) + "x " + interceptVal;
+            } else {
+                return "y = " + Math.abs(y) + "/" + Math.abs(x) + "x " + interceptVal;
             }
-            if (x / 3 != 0 && y / 3 != 0 && x % 3 == 0 && y % 3 == 0) {
-                while (x / 3 != 0 && y / 3 != 0 && x % 3 == 0 && y % 3 == 0) {
-                    x /= 3;
-                    y /= 3;
-                }
-            }
-            if (x / 5 != 0 && y / 5 != 0 && x % 5 == 0 && y % 5 == 0) {
-                while (x / 5 != 0 && y / 5 != 0 && x % 5 == 0 && y % 5 == 0) {
-                    x /= 5;
-                    y /= 5;
-                }
-            }
-            if (x / 7 != 0 && y / 7 != 0 && x % 7 == 0 && y % 7 == 0) {
-                while (x / 7 != 0 && y / 7 != 0 && x % 7 == 0 && y % 7 == 0) {
-                    x /= 7;
-                    y /= 7;
-                }
-            }
-
-            if (x / 11 != 0 && y / 11 != 0 && x % 11 == 0 && y % 11 == 0) {
-                while (x / 11 != 0 && y / 11 != 0 && x % 11 == 0 && y % 11 == 0) {
-                    x /= 11;
-                    y /= 11;
-                }
-            }
-
-            if (x / 13 != 0 && y / 13 != 0 && x % 13 == 0 && y % 13 == 0) {
-                while (x / 13 != 0 && y / 13 != 0 && x % 13 == 0 && y % 13 == 0) {
-                    x /= 13;
-                    y /= 13;
-                }
-            }
-
-            if (x / 17 != 0 && y / 17 != 0 && x % 17 == 0 && y % 17 == 0) {
-                while (x / 17 != 0 && y / 17 != 0 && x % 17 == 0 && y % 17 == 0) {
-                    x /= 17;
-                    y /= 17;
-                }
-            }
-
-            return "y = " + y + "/" + x + "x " + interceptVal;
         }
     }
 
